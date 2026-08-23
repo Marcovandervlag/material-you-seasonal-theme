@@ -8,7 +8,49 @@
 
 **A high-end, adaptive Material You (Material Design 3) seasonal theme for Home Assistant with full light & dark mode support, native Web Awesome tokens, modern pill navigation, and deep card integrations.**
 
-[🎨 Features](#-features) • [🍂 The 4 Seasons](#-the-4-seasons) • [📦 Installation](#-installation) • [⚙️ Automations](#%EF%B8%8F-seasonal-automations) • [🍄 Card Integrations](#-card-integrations)
+[📸 Seasonal Showcase](#-seasonal-showcase) • [🎨 Highlights](#-highlights) • [📦 Installation](#-installation) • [⚙️ Automations](#%EF%B8%8F-seasonal-automations) • [🍄 Card Integrations](#-card-integrations)
+
+</div>
+
+---
+
+## 📸 Seasonal Showcase
+
+<div align="center">
+
+### 🍂 Herfst (Autumn)
+*Warm Terracotta & Soft Peach in Light Mode • Rich Cocoa & Glowing Amber in Dark Mode*
+
+| Light Mode | Dark Mode |
+| :---: | :---: |
+| <img src="screenshots/herfst_licht.png" width="380" /> | <img src="screenshots/herfst_donker.png" width="380" /> |
+
+---
+
+### ❄️ Winter (Winter)
+*Crisp Frost & Pastel Sky in Light Mode • Midnight Arctic & Vivid Cyan in Dark Mode*
+
+| Light Mode | Dark Mode |
+| :---: | :---: |
+| <img src="screenshots/winter_licht.png" width="380" /> | <img src="screenshots/winter_donker.png" width="380" /> |
+
+---
+
+### 🌸 Lente (Spring)
+*Fresh Botanical & Soft Sage in Light Mode • Deep Emerald & Radiant Mint in Dark Mode*
+
+| Light Mode | Dark Mode |
+| :---: | :---: |
+| <img src="screenshots/lente_licht.png" width="380" /> | <img src="screenshots/lente_donker.png" width="380" /> |
+
+---
+
+### 🌴 Zomer (Summer)
+*Mediterranean Sand & Warm Honey in Light Mode • Deep Midnight & Sunset Gold in Dark Mode*
+
+| Light Mode | Dark Mode |
+| :---: | :---: |
+| <img src="screenshots/zomer_licht.png" width="380" /> | <img src="screenshots/zomer_donker.png" width="380" /> |
 
 </div>
 
@@ -24,7 +66,7 @@
 
 ---
 
-## 🍂 The 4 Seasons
+## 🍂 The 4 Seasons Overview
 
 | Season | Light Mode Accent | Dark Mode Accent | Atmosphere |
 | :--- | :--- | :--- | :--- |
