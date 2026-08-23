@@ -1,0 +1,101 @@
+# ==============================================================================
+# 🌸🍂 SEIZOENEN THEMA AUTOMATISERINGEN VOOR HOME ASSISTANT ❄️☀️
+# Keuze uit: Browser Mod per gebruiker OF Globale datum/sensor wissel
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. BROWSER MOD & SEIZOEN INTEGRATIE AUTOMATISERING (Aanbevolen per gebruiker)
+# ------------------------------------------------------------------------------
+- id: seasonal_theme_browser_mod_switcher
+  alias: "Seizoen Thema Aanpassing (Browser Mod)"
+  description: "Past het dashboard thema automatisch aan op basis van het huidige seizoen per gebruiker."
+  triggers:
+    - trigger: state
+      entity_id: sensor.seizoen
+  conditions: []
+  actions:
+    - choose:
+        # Zomer
+        - conditions:
+            - condition: state
+              entity_id: sensor.seizoen
+              state: summer
+          sequence:
+            - action: browser_mod.set_theme
+              data:
+                user_id:
+                  - person.marco_van_der_vlag
+                  - person.trientje
+                theme: Material You Zomer
+                dark: light
+
+        # Herfst
+        - conditions:
+            - condition: state
+              entity_id: sensor.seizoen
+              state: autumn
+          sequence:
+            - action: browser_mod.set_theme
+              data:
+                user_id:
+                  - person.marco_van_der_vlag
+                  - person.trientje
+                theme: Material You Herfst
+                dark: light
+
+        # Winter
+        - conditions:
+            - condition: state
+              entity_id: sensor.seizoen
+              state: winter
+          sequence:
+            - action: browser_mod.set_theme
+              data:
+                user_id:
+                  - person.marco_van_der_vlag
+                  - person.trientje
+                theme: Material You Winter
+                dark: dark
+
+        # Lente
+        - conditions:
+            - condition: state
+              entity_id: sensor.seizoen
+              state: spring
+          sequence:
+            - action: browser_mod.set_theme
+              data:
+                user_id:
+                  - person.marco_van_der_vlag
+                  - person.trientje
+                theme: Material You Lente
+                dark: light
+  mode: single
+
+# ------------------------------------------------------------------------------
+# 2. GLOBALE THEMA WISSELAAR OP KALENDERDATUM (frontend.set_theme)
+# ------------------------------------------------------------------------------
+- id: seasonal_theme_global_calendar_switcher
+  alias: "Seizoenen Thema Wisselaar (Globaal op Datum)"
+  description: "Wisselt automatisch op de 1e van het seizoen voor het hele systeem"
+  trigger:
+    - platform: time
+      at: "00:01:00"
+  condition:
+    - condition: template
+      value_template: >-
+        {{ (now().month in [3, 6, 9, 12]) and (now().day == 1) }}
+  action:
+    - action: frontend.set_theme
+      data:
+        name: >-
+          {% set m = now().month %}
+          {% if m in [3, 4, 5] %}
+            Material You Lente
+          {% elif m in [6, 7, 8] %}
+            Material You Zomer
+          {% elif m in [9, 10, 11] %}
+            Material You Herfst
+          {% else %}
+            Material You Winter
+          {% endif %}
